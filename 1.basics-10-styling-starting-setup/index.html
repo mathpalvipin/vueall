@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Dynamic Styling</h1>
+    </header>
+    <section id="styling">
+       <div 
+          :class="['demo',{active:boxAselected}]"    @click='boxselected("A")'></div>
+      <div   :class="['demo',{active:boxBselected}]"   @click='boxselected("B")'></div>
+      <div  :class="['demo',{active:boxCselected}]"   @click='boxselected("C")'></div>
+
+      <hr>
+      <p>using computed</p>
+       <div  class="demo" :class="boxAclasses"    @click='boxselected("A")'></div>
+      <div class="demo"  :class="boxBclasses"   @click='boxselected("B")'></div>
+      <div class="demo" :class="boxCclasses"   @click='boxselected("C")'></div>
+
+      <hr>
+
+         <div  class="demo" 
+          :class="{active:boxAselected}"    @click='boxselected("A")'></div>
+      <div class="demo"  :class="{active:boxBselected}"   @click='boxselected("B")'></div>
+      <div class="demo" :class="{active:boxCselected}"   @click='boxselected("C")'></div>
+
+      <hr>
+        <div :class="boxAselected ?'demo active ': ' demo' "  @click='boxselected("A")'></div>
+      <div class="demo" 
+      :class="boxBselected ?'demo active ': ' demo' "  @click='boxselected("B")'></div>
+      <div class="demo" :class="boxCselected ?'demo active ': ' demo' " @click='boxselected("C")'></div>
+
+      <hr>
+      <div class="demo" :style='{borderColor: boxAselected ? "red":
+      "blue"}' @click='boxselected("A")'></div>
+      <div class="demo" :style='{borderColor: boxBselected ? "red":
+      "blue"}'   @click='boxselected("B")'></div>
+      <div class="demo" :style='{borderColor: boxCselected ? "red":
+      "blue"}' @click='boxselected("C")'></div>
+    </section>
+  </body>
+</html>

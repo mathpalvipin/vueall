@@ -1,0 +1,32 @@
+#bag{
+	width: 200px;
+	height: 500px;
+	margin-bottom:  0 auto;
+	background-image: url(bag.png)   ;
+	margin:  10px 10px 10px 530px;
+
+}
+#bag:hover{cursor: url(punch.png), pointer;
+;}
+#bag-blast{
+	width: 200px;
+	height: 500px;
+	margin-bottom:  0 auto;
+	background-image: url(bag-burst.png)   ;
+	margin:  10px 10px 10px 530px;
+}
+#health{
+	border: 1px solid black;
+		 height: 20px;
+width: 200px;
+margin: 0 auto 20px auto;
+}
+#health div{ 
+	width: 100%;
+	 height: 20px;
+	 background-color: red;
+}
+#controls{
+	 margin:  0 auto;
+	  text-align: center;
+}

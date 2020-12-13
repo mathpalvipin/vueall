@@ -1,0 +1,7 @@
+#convas{
+	width: 600px;
+	height: 600px;
+	padding: 10px;
+	text-align: center;
+	border:1px solid black;
+}

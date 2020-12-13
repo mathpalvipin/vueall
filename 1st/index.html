@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vue project</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body> 
+<div id='app'>
+	
+<h1>{{name}}</h1>
+<h1> {{ hello()}}</h1>
+<a v-bind:href="website"  >hello</a>  <!--bend to attribute -->  
+<p v-html="websitetag"></p>
+<input type="text" name="name" v-bind:value="website"> 
+
+<br>
+<br>
+ <hr>
+ <h1>event</h1>
+ <button  v-on:click="age++"> add year </button>
+ <button v-on:click.once="age--"> sub year  only once </button>  <!-- event modifier (once)-->
+ <p> myage {{age}}</p>
+
+
+ <hr><h1>mouse event</h1>
+  <div id="convas" @mousemove="updateXY">{{x}},{{y}}  </div>
+
+<h1> keyboard events</h1>
+<input type=" text " v-on:keyup.enter='nameenter' placeholder="name">
+<input type="text" name="" v-on:keyup.alt.enter='ageenter' placeholder="age" >
+
+
+<br>
+<br>
+<hr>
+<input type=" text " v-model='name' placeholder="name">		
+
+<input type="text" name="" v-model="age" placeholder="age" ><br>
+<label> {{name}}</label>
+<br>
+<label>{{ age }}</label>
+
+<br>
+<br>
+ <hr>
+ <br>
+ <br>
+ <button v-on:click =" error=!error">error</button>
+ 
+ <button v-on:click =" success=!success">success</button>
+<p v-if="error"> there is error </p>
+<p v-if="success"> sucess ful </p>
+
+<br><br><hr>
+<br>
+<!--  display none , element is not remove from DOM-->
+<p v-show="error"> there is error </p>
+<p v-show="success"> sucess ful </p>
+
+
+<br>
+<br>
+ <hr>
+ <br>
+ <br>
+
+ <div v-for='team in teams'>
+ 	<li>{{team.name}}</li>
+ </div>
+ <div v-for='(team, index) in teams'>
+ 	<li>{{index}}:-{{team.name}}</li>
+ </div>
+
+
+
+
+ <!-- don't us div ion DOM-->
+ <template v-for="team in teams">
+ 	<li>{{team.name}}</li>    
+ </template>
+
+
+<br>
+<br>
+ <hr>
+ <br>
+ <br>
+ <!-- loop through object-->
+ <template v-for="team in teams">
+ <div v-for="(val,key) in team ">
+ 	<h3>{{key}}:- {{val}}</h3>
+ </div>
+  </template>
+
+
+
+
+
+</div>
+
+
+
+
+
+<script  src="app.js"></script>
+</body>
+</html>

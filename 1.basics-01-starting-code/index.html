@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Course Goals</h1>
+    </header>
+    <section id="user-goal">
+      <h2>My Course Goal</h2>
+      <!---<p v-html='outputgoal() '>--->
+        <p>{{ courseGoal }}</p>
+      <p v-html='outputgoal()'></p>
+      <p ><a v-bind:href="vuelink">{{vuelink}} </a> </p>
+<small>shorthand of v-bind is :
+        shorthand of v-on is @ </small>
+      <p > <a :href="vuelink">{{vuelink}} </a> </p>
+
+
+ <h2> event listener </h2>
+ <button @click="counter++" > add </button>
+  <button v-on:click="counter--" > reduce</button>
+   <p> REsult :{{counter}}</p>
+
+<p> 
+ <button @click="add(5)" > add </button>
+  <button v-on:click="reduce(5)" > reduce</button> 
+   <p> REsult :{{counter}}</p>
+
+
+<p v-once> old conter {{counter}}</p>
+  
+<p>{{fullname}}</p>
+ 
+  
+<input type="text"   v-on:input="setname($event,'kon')" v-on:keyup.enter='confirmname()'>
+
+<p> your name {{name}}</p>
+ <p>  confirmname :{{confname}}</p>
+ <h1> modifier</h1>
+
+  <h2> event listener </h2>
+ <button @click.left="add(5)" @click.right="reduce(5)"> add </button>
+ 
+   <p> REsult :{{counter}}</p>
+<form v-on:submit.prevent='submit()'>
+  <input type="text" name="">
+  <button>sign up</button>
+</form>
+
+
+     </section>
+  </body>
+</html>
